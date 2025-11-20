@@ -24,13 +24,6 @@
                 <input type="email" class="form-control @error('email') is-invalid @enderror" id="inputEmail1"
                     wire:model="email">
             </div>
-            <div class="mb-3">
-                <label for="inputRole" class="form-label">Rooli</label>
-                <select wire:model="role" class="form-select @error('role') is-invalid @enderror" id="inputRole">
-                    <option value="user">Käyttäjä</option>
-                    <option value="admin">Ylläpitäjä</option>
-                </select>
-            </div>
             <br>
             <button type="submit" class="btn btn-primary">Submit</button>
         </form>

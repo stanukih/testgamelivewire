@@ -21,7 +21,7 @@
             </div>
         </div>
     </nav>
-    <div class="container-xxl">
+    <div >
         <br><br>
     {{ $slot }}
     </div>
