@@ -1,10 +1,9 @@
 <div class="container-md">
-
-    @error('loginError')
-        <div class="alert alert-danger">
-            Sähkoposti + salasanaa ei löytynyt
-        </div>
-    @enderror
+    @if (session()->has('message'))
+            <div class="alert alert-danger">
+                {{ session('message') }}
+            </div>
+    @endif
     <form wire:submit="login">        
         <div class="mb-3">
             <label for="exampleInputEmail1" class="form-label">Sähköposti</label>

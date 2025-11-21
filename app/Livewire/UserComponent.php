@@ -4,6 +4,7 @@ namespace App\Livewire;
 
 use App\Models\Question;
 use App\Models\Topic;
+use Illuminate\Support\Facades\Auth;
 use Livewire\Component;
 use Livewire\Attributes\On;
 
@@ -64,9 +65,9 @@ class UserComponent extends Component
             'newTopic' => 'required',
         ]);
         $topic->title = $validated['newTopic'];
-        $topic->user_id = 1;
+        $topic->user_id = Auth::user()->id;
         $topic->save();
-        $this->topics = Topic::all();  
+        $this->topics = Topic::all();
     }
     public function createQuestion(){
 

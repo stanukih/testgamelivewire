@@ -1,3 +1,4 @@
+<div>
 <div class="row">
 
     <div class="col">
@@ -88,4 +89,11 @@
 
 
 
+</div>
+<div>
+        <h1>
+            Salasanan päivittäminen
+            <livewire:user.update-password-component>
+        </h1>
+    </div>
 </div>

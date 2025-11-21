@@ -4,7 +4,7 @@
     @endguest
 
     @auth
-        <a wire:navigate href="{{ route('auth') }}" class="nav-link">Kirjaudu ulos</a>
+        <a wire:navigate href="{{ route('logout') }}" class="nav-link">Kirjaudu ulos</a>
     @endauth
     <ul class="dropdown-menu" aria-labelledby="navbarDropdown">
         

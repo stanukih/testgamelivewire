@@ -1,3 +1,4 @@
+<div>
 <div class="row">
     <div class="col">
         <h1>Aiheet</h1>
@@ -59,10 +60,13 @@
         <h1>Tehtävä</h1>
     </div>
     @endif
-    <div class="col">
+    
+    
+</div>
+<div>
         <h1>
             Salasanan päivittäminen
+            <livewire:user.update-password-component>
         </h1>
     </div>
-    
 </div>
