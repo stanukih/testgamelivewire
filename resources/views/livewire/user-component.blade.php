@@ -1,5 +1,4 @@
 <div>
-    @json($this)
     <div class="row">
         <div class="col">
             <h1>Aiheet</h1>

@@ -53,12 +53,14 @@ class UserComponent extends Component
     #[On('activateQuestion')]
     public function activateQuestion($id){
         $this->activeQuestion = Question::find( $id );
-        /*$this->questions = [];
-        $this->questions = Question::where('topic_id', $this->activeTopic->id)->get();
-        $this->activeQuestion = null;
-        $this->newQuestion = null;*/
     }
 
+    #[On('questionSave')]
+    public function questionSave(){
+        $this->updateQuestions();
+    }
+
+    
     public function createTopic(){
 
         $topic = new Topic;

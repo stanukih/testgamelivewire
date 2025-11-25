@@ -1,9 +1,5 @@
 <div>
-    test
     <form wire:submit='save'>
-        <label for="title" class="form-label">Otsikko</label>
-        <input type="text" wire:model='title' id='title' class="form-control">
-        
         <label for="question_text" class="form-label">Kysymys</label>
         <input type="text" wire:model='question_text' id='question_text' class="form-control">
 
