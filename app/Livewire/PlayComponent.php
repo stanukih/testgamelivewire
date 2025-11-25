@@ -2,6 +2,7 @@
 
 namespace App\Livewire;
 
+use App\Models\Topic;
 use Livewire\Component;
 use Livewire\Attributes\On;
 
@@ -10,10 +11,25 @@ class PlayComponent extends Component
 {
     public $state; //start, reg, play, score
     public $activeTeacherId;
-    public $topic;
-    public $name;
-    public $difficulty;
+    public $activeTopicId;
+    public $activeTopicName;
+    public $playerName;
+    public $difficulty = 5;
     public $question;
+
+    public function next(){
+        switch ($this->state) {
+            case 'start':
+                $this->state = 'reg';
+                break;
+            case 'reg':
+                $this->state = 'play';
+                break;
+            case 'play':
+                $this->state = 'score';
+                break;
+        }
+    }
     public function render()
     {
         return view('livewire.play-component');
@@ -24,13 +40,13 @@ class PlayComponent extends Component
     }
 
     #[On('selectTeacher')]
-    public function selectTeacher($id){
-        
+    public function selectTeacher($id){        
         $this->activeTeacherId = $id;
-        $this->question = $id;
-        /*$this->questions = [];
-        $this->questions = Question::where('topic_id', $this->activeTopic->id)->get();
-        $this->activeQuestion = null;
-        $this->newQuestion = null;*/
+    }
+
+    #[On('selectTopic')]
+    public function selectTopic($id){        
+        $this->activeTopicId = $id;
+        $this->activeTopicName = Topic::find($id)->title;
     }
 }

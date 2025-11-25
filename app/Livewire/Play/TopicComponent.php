@@ -18,4 +18,7 @@ class TopicComponent extends Component
     {
         return view('livewire.play.topic-component');
     }
+    public function selectTopic(){
+        $this->dispatch("selectTopic", id: $this->selectedTopic);
+    }
 }

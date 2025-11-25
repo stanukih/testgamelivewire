@@ -1,0 +1,3 @@
+<div>
+    @json($this)
+</div>
