@@ -46,7 +46,7 @@ class UserComponent extends Component
     #[On('questionDelete')]
     public function updateQuestions(){
         $this->questions = [];
-        $this->questions = Question::where('topic_id', $this->activeTopic)->get();
+        $this->questions = Question::where('topic_id', $this->activeTopic->id)->get();
     }
 
     #[On('activateQuestion')]
@@ -78,6 +78,6 @@ class UserComponent extends Component
         $question->title = $validated['newQuestion'];
         $question->topic_id = $this->activeTopic->id;
         $question->save();
-        $this->questions = Question::all();  
+        $this->questions = Question::where('topic_id', $this->activeTopic->id)->get();
     }
 }

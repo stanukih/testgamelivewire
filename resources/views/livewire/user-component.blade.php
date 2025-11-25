@@ -38,7 +38,7 @@
             <tbody>
 
                 @foreach ($questions as $question)
-                    <livewire:user.questions-component :question="$question" :key="'$question'.$question->id">
+                    <livewire:user.questions-component :question="$question" :key="'$question_title'.$question->id">
                 @endforeach
                 <tr>
                     <td colspan="2">
@@ -57,7 +57,8 @@
     @endif
     @if ($activeQuestion)
     <div class="col">
-        <h1>Tehtävä</h1>
+        <h1>Valittu aihe: "{{ $activeQuestion->title }}"</h1>
+        <livewire:user.question-component :question="$activeQuestion" :key="'$question'.$activeQuestion->id">
     </div>
     @endif
     
