@@ -22,12 +22,13 @@ class UserComponent extends Component
         return view('livewire.user-component');
     }
     public function mount(): void{
-        $this->topics = Topic::all();        
+        //$this->user_id = Auth::user()->id;
+        $this->topics = Topic::all()->where('user_id',Auth::user()->id);        
     }    
 
     #[On('topicDelete')]
     public function updateTopics($id){
-        $this->topics = Topic::all();  
+        $this->topics = Topic::all()->where('user_id',Auth::user()->id);  
         if ($id==$this->activeTopic->id){
             $this->activeTopic->id = null;
         }
@@ -67,7 +68,7 @@ class UserComponent extends Component
         $topic->title = $validated['newTopic'];
         $topic->user_id = Auth::user()->id;
         $topic->save();
-        $this->topics = Topic::all();
+        $this->topics = Topic::all()->where('user_id',Auth::user()->id);  
     }
     public function createQuestion(){
 
