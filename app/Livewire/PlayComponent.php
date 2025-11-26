@@ -2,6 +2,7 @@
 
 namespace App\Livewire;
 
+use App\Models\Score;
 use App\Models\Topic;
 use Livewire\Component;
 use Livewire\Attributes\On;
@@ -52,8 +53,14 @@ class PlayComponent extends Component
     }
 
     #[On('sendResult')]
-    public function getResult($points){
+    public function getResult($points, $difficulty){
         $this->points = $points;
         $this->state = 'score';
+        $score = new Score();
+        $score->topic_id = $this->activeTopicId;
+        $score->name = $this->playerName;
+        $score->number_of_questions = $difficulty;
+        $score->number_of_questions = $points;
+        $score->save();
     }
 }

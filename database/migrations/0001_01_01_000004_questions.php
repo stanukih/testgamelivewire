@@ -20,7 +20,7 @@ return new class extends Migration
             $table->string('answer2')->nullable();
             $table->string('answer3')->nullable();
             $table->string('answer4')->nullable();
-            $table->integer('correct')->nullable();
+            $table->integer('correct')->nullable()->default(1);
             $table->text('comment')->nullable();            
             $table->timestamps();
         });

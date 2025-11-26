@@ -18,16 +18,22 @@ class QuestionsComponent extends Component
     }
 
     public function mount(){
-        $this->questions = Question::where('topic_id', $this->activeTopicId)->get();        
+        $this->questions = 
+        Question::where('topic_id', $this->activeTopicId)
+        ->limit($this->difficulty)
+        ->get();        
+        $this->difficulty = $this->questions->count();
+        
     }
 
     #[On('sendAnswer')]
     public function getAnswer($answer){
-        if ($answer === $this->questions[0]->correct){
-            $this->points++;
+        if ($answer == $this->questions[0]->correct){
+            $this->points+=1;
         }
-        if (!$this->questions->shift()){
-            $this->dispatch("sendResult", points: $this->points);
+        $this->questions->shift();
+        if ($this->questions->count()===0){
+            $this->dispatch("sendResult", points: $this->points, difficulty: $this->difficulty);
         }
     }
 }

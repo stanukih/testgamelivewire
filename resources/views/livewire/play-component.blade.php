@@ -20,7 +20,7 @@
         <h1>Kuka sinä olet</h1>
             <form wire:submit='next'>                
                 <label for="playerName" class="form-label">Nimi</label>
-                <input type="text" wire:model="$playerName" class="form-control" id="playerName">
+                <input type="text" wire:model="playerName" class="form-control" id="playerName">
                 <input type="submit" value="Seurava">
             </form>
         @break

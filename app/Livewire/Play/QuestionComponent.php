@@ -13,6 +13,6 @@ class QuestionComponent extends Component
         return view('livewire.play.question-component');
     }
     public function send(){
-        $this->dispatch("sendAnswer", answer: $this->answer);
+        $this->dispatch("sendAnswer", answer: intval($this->answer));
     }
 }

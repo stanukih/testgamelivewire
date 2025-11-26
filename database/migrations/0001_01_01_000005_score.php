@@ -15,8 +15,8 @@ return new class extends Migration
             $table->id();
             $table->foreignId('topic_id')->constrained()->cascadeOnDelete();
             $table->text('name')->nullable();
-            $table->string('number_of_questions');
-            $table->string('number_of_correct');    
+            $table->integer('number_of_questions');
+            $table->integer('number_of_correct');    
             $table->timestamps();
         });
     }
