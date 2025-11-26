@@ -1,13 +1,11 @@
 <div>
-    @json($this)
     <h1>Tulostaulukko</h1>
     <table class="table">
         <tr>
             <th scope="col">Nimi</td>
             <th>Pistet</td>
             <th>Kysymykset</td>
-        </tr>
-        
+        </tr>        
             @foreach ($scores as $score)
             <tr>
                 <td>1</td>

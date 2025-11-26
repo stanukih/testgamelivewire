@@ -29,8 +29,8 @@
             <livewire:play.questions-component :activeTopicId="$activeTopicId" :difficulty="$difficulty">
         @break
         
-        @case("score")
-            <livewire:play.score-component :activeTopicId="$activeTopicId">
+        @case("score")            
+            <livewire:play.score-component :activeTopicId="$activeTopicId" :key="'activeTopicId'.$activeTopicId">
         @break
 
     @endswitch

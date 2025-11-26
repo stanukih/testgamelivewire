@@ -78,7 +78,8 @@
     @if ($activeTopic)
 
     <div class="row">
-        <livewire:play.score-component :activeTopicId={{ $activeTopicId }}>
+        <livewire:play.score-component :activeTopicId="$activeTopic->id" :key="'activeTopicId'.$activeTopic->id">
+        
 
     </div>
     @endif

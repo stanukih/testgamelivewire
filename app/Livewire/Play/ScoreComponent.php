@@ -23,6 +23,7 @@ class ScoreComponent extends Component
     public function load($page = 1){
         $this->scores = Score::where('id', $this->activeTopicId)
         ->orderBy("number_of_questions","desc")
-        ->orderBy("number_of_correct","desc")->get();        
+        ->orderBy("number_of_correct","desc")->get();  
+        dump($this->activeTopicId);        
     }
 }
