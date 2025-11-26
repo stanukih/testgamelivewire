@@ -15,17 +15,28 @@ class ScoreComponent extends Component
     {
         return view('livewire.play.score-component');
     }
-    public function mount(){
+    public function mount(){        
         $this->quantity = Score::where('topic_id', $this->activeTopicId)->count('*');  
         $this->load();
+        dump($this->quantity);
     }
 
     public function load($page = 1){
         $this->scores = Score::where('topic_id', intval($this->activeTopicId))
         ->orderBy("number_of_questions","desc")
         ->orderBy("number_of_correct","desc")
-        ->get();  
-        //$this->scores = Score::all();
-          
+        ->limit($page * 25)
+        ->offset(($page-1) * 25)
+        ->get();          
+    }
+
+    public function next(){
+        $this->page++;
+        $this->load($this->page);
+    }
+
+    public function previous(){
+        $this->page--;
+        $this->load($this->page);
     }
 }

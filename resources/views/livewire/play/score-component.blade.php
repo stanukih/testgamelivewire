@@ -13,6 +13,13 @@
                 <td>{{ $score->number_of_questions }}</td>
             </tr>
         @endforeach
-
     </table>
+    @if ($quantity>$page*25)
+        <button wire:click='next'>-></button> 
+    @endif
+    @if ($page>1)
+        <button wire:click='previous'><-</button>        
+        
+    @endif
+    
 </div>
