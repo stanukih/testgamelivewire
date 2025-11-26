@@ -16,6 +16,7 @@ class PlayComponent extends Component
     public $playerName;
     public $difficulty = 5;
     public $question;
+    public $points = 0;
 
     public function next(){
         switch ($this->state) {
@@ -48,5 +49,11 @@ class PlayComponent extends Component
     public function selectTopic($id){        
         $this->activeTopicId = $id;
         $this->activeTopicName = Topic::find($id)->title;
+    }
+
+    #[On('sendResult')]
+    public function getResult($points){
+        $this->points = $points;
+        $this->state = 'score';
     }
 }

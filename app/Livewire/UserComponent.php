@@ -83,4 +83,5 @@ class UserComponent extends Component
         $question->save();
         $this->questions = Question::where('topic_id', $this->activeTopic->id)->get();
     }
+    
 }

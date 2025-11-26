@@ -5,7 +5,7 @@
         <h1>Mitä haluat tänään</h1>
             <livewire:play.teacher-component></livewire:user.topics-component>
             @if ($activeTeacherId)
-                <livewire:play.topic-component :activeTeacherId="$activeTeacherId"></livewire:user.topics-component> 
+                <livewire:play.topic-component :activeTeacherId="$activeTeacherId" :key="'$activeTeacherId'.$activeTeacherId"></livewire:user.topics-component> 
                 @if ($activeTopicId)
                     <label><input type="radio" wire:model="difficulty" value="5" /> 5 Kysymystä </label>
                     <label><input type="radio" wire:model="difficulty" value="10" checked/> 10 Kysymystä </label>
@@ -26,7 +26,7 @@
         @break
         
         @case("play")
-                <livewire:play.questions-component :activeTopicId="$activeTopicId" :difficulty="$difficulty">
+            <livewire:play.questions-component :activeTopicId="$activeTopicId" :difficulty="$difficulty">
         @break
         
         @case("score")
@@ -34,7 +34,7 @@
         @break
 
     @endswitch
-    <h1>play</h1>
+    
     @json($this)
     
     
