@@ -60,7 +60,7 @@ class PlayComponent extends Component
         $score->topic_id = $this->activeTopicId;
         $score->name = $this->playerName;
         $score->number_of_questions = $difficulty;
-        $score->number_of_questions = $points;
+        $score->number_of_correct = $points;
         $score->save();
     }
 }
