@@ -26,7 +26,15 @@
             </table>
 
         </div>
+
+
+
+    </div>
+
+    <div class="row">
         @if ($activeTopic)
+            
+
             <div class="col">
                 <h1>Valittu aihe: "{{ $activeTopic->title }}"</h1>
                 <table class="table">
@@ -54,21 +62,34 @@
                 </table>
 
             </div>
-        @endif
-        @if ($activeQuestion)
             <div class="col">
-                <h1>Valittu aihe: "{{ $activeQuestion->title }}"</h1>
-                <livewire:user.question-component :question="$activeQuestion" :key="'$question' . $activeQuestion->id">
+                @if ($activeQuestion)
+                    <div class="col">
+                        <h1>Valittu aihe: "{{ $activeQuestion->title }}"</h1>
+                        <livewire:user.question-component :question="$activeQuestion" :key="'$question' . $activeQuestion->id">
+                    </div>
+                @endif
             </div>
         @endif
 
+    </div>
+
+
+    @if ($activeTopic)
+
+    <div class="row">
+        <livewire:play.score-component :activeTopicId={{ $activeTopicId }}>
 
     </div>
-    <div>
+    @endif
+
+
+
+
+    <div class="row">
         <h1>
             Salasanan päivittäminen
             <livewire:user.update-password-component>
         </h1>
     </div>
-    
 </div>

@@ -30,7 +30,7 @@
         @break
         
         @case("score")
-            <h1>1</h1>
+            <livewire:play.score-component :activeTopicId="$activeTopicId">
         @break
 
     @endswitch
