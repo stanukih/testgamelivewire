@@ -1,6 +1,6 @@
 <div>
     @guest
-        <a wire:navigate href="{{ route('auth') }}" class="nav-link">Kirjaudu</a>
+        <a wire:navigate href="{{ route('login') }}" class="nav-link">Kirjaudu</a>
     @endguest
 
     @auth
