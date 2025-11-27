@@ -19,7 +19,6 @@ class ScoreComponent extends Component
         $this->quantity = Score::where('topic_id', $this->activeTopicId)
         ->count('*');  
         $this->load();
-        dump($this->quantity);
     }
 
     public function load($page = 1){
