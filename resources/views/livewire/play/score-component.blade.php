@@ -7,7 +7,7 @@
             <th>Kysymykset</td>
         </tr>
         @foreach ($scores as $score)
-            <tr>
+            <tr wire:key="'score'.{{ $score->id }}">
                 <td>{{ $score->name }}</td>
                 <td>{{ $score->number_of_correct }}</td>
                 <td>{{ $score->number_of_questions }}</td>
