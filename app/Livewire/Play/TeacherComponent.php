@@ -10,7 +10,7 @@ class TeacherComponent extends Component
     public $teachers = [];
     public $selectedTeacher;
     public function mount(){
-        $this->teachers = User::all()->where('role', 'user');
+        $this->teachers = User::all()->where('role', 'user')->where('isActive', true);
     }
     public function render()
     {
