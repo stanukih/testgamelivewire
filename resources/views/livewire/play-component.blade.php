@@ -35,7 +35,6 @@
 
     @endswitch
     
-    @json($this)
     
     
 </div>
