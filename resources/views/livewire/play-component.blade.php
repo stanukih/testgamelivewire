@@ -7,9 +7,9 @@
             @if ($activeTeacherId)
                 <livewire:play.topic-component :activeTeacherId="$activeTeacherId" :key="'$activeTeacherId'.$activeTeacherId"></livewire:user.topics-component> 
                 @if ($activeTopicId)
-                    <label><input type="radio" wire:model="difficulty" value="5" /> 5 Kysymystä </label>
-                    <label><input type="radio" wire:model="difficulty" value="10" checked/> 10 Kysymystä </label>
-                    <label><input type="radio" wire:model="difficulty" value="15"/> 15 Kysymystä </label>
+                    <label><input type="radio" wire:model="difficulty" value="5" class="form-check-input"/> 5 Kysymystä </label>
+                    <label><input type="radio" wire:model="difficulty" value="10" class="form-check-input" /> 10 Kysymystä </label>
+                    <label><input type="radio" wire:model="difficulty" value="15" class="form-check-input"/> 15 Kysymystä </label>
                     <button wire:click="next">Seurava</button>                    
                 @endif
             @endif
