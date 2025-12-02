@@ -6,16 +6,18 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.8/dist/css/bootstrap.min.css" rel="stylesheet"
         integrity="sha384-sRIl4kxILFvY47J16cr9ZwB07vP4J8+LH7qKQnuqkuIAvNWLzeN8tE5YBujZqJLB" crossorigin="anonymous">
+    <link rel="stylesheet" href="https://fonts.googleapis.com/icon?family=Material+Icons">
+        @stack('styles')
     <title>{{ $title ?? 'Page Title' }}</title>
 </head>
 
 <body d-flex flex-column min-vh-100>
     <nav class="navbar navbar-expand-lg navbar-light bg-light">
         <div class="container-fluid">
-            <div class="d-flex flex-wrap align-items-center justify-content-center justify-content-lg-start">               
+            <div class="d-flex flex-wrap align-items-center justify-content-between justify-content-lg-start">               
 
                 <ul class="navbar-nav me-auto mb-2 mb-lg-0">
-                    <li ><a wire:navigate href="{{ route('home') }}" class="nav-link">Home</a></li>
+                    <li ><a wire:navigate href="{{ route('home') }}" class="nav-link">Etusivu</a></li>
                     <li><livewire:user.menu-component></li>
                 </ul>
             </div>
