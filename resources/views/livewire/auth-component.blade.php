@@ -1,20 +1,21 @@
-<div class="container-md">
-    @if (session()->has('message'))
-            <div class="alert alert-danger">
-                {{ session('message') }}
-            </div>
-    @endif
-    <form wire:submit="login">        
-        <div class="mb-3">
-            <label for="exampleInputEmail1" class="form-label">Sähköposti</label>
-            <input type="email" class="form-control" id="exampleInputEmail1" aria-describedby="emailHelp"
-                wire:model="email" >
-        </div>
-        <div class="mb-3">
-            <label for="exampleInputPassword1" class="form-label">Salasana</label>
-            <input type="password" class="form-control" id="exampleInputPassword1" wire:model="password" required>
-        </div>
-        <button type="submit" class="btn btn-primary">Submit</button>
-    </form>
+@push('styles')
+<link rel="stylesheet" href="{{ asset('css/auth.css') }}">
+@endpush
 
+<div class="main">
+    <div class="login-cont">
+        <div class="login-form">
+            <form wire:submit="login">
+                <h2>Kirjaudu sisään</h2>
+                <input type="email" id="exampleInputEmail1" name="username" placeholder="Käyttäjätunnus" required wire:model="email">
+                <input type="password" id="exampleInputPassword1" name="password" placeholder="Salasana" required wire:model="password">
+                <button type="submit">Kirjaudu sisään</button>
+            </form>
+                <div class="login-alert">
+                    @if (session()->has('message'))
+                    {{ session('message') }}                                
+                    @endif 
+                </div>
+        </div>
+    </div>
 </div>
